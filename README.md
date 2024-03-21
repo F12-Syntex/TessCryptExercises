@@ -6,8 +6,8 @@ This repository contains my solutions for the Cryptography Assignment from the C
 
 The assignment consists of seven exercises, each involving a different cipher or encryption method:
 
-1. **Exercise 1** (✅ Completed): Decrypt a plaintext encoded with a Caesar cipher.
-2. **Exercise 2** (✅ Completed): Decrypt a plaintext encoded with a Vigenere cipher using the key "TESSOFTHEDURBERVILLES".
+1. ✅ **Exercise 1**: Decrypt a plaintext encoded with a Caesar cipher.
+2. ✅ **Exercise 2**: Decrypt a plaintext encoded with a Vigenere cipher using the key "TESSOFTHEDURBERVILLES".
 3. **Exercise 3**: Decrypt a plaintext encoded with a Vigenere cipher using an arbitrary 6-letter key.
 4. **Exercise 4**: Decrypt a plaintext encoded with a Vigenere cipher using an arbitrary 4-6 letter key.
 5. **Exercise 5**: Decrypt a plaintext encoded with a transposition cipher written row-wise across 4-6 columns.
