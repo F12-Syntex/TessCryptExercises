@@ -42,15 +42,9 @@ public class CaesarCipher extends Task {
         return "";
     }
 
-    /**
-     * Shift the character by the given shift
-     * 
-     * @param c     the character to shift
-     * @param shift the shift value
-     * @return the shifted character
-     */
-    private char shiftCharacter(char c, int shift) {
-        char base = Character.isLowerCase(c) ? 'a' : 'A';
-        return (char) ((c - base + shift) % 26 + base);
+    public static void main(String[] args) {
+        CaesarCipher caesarCipher = new CaesarCipher();
+        String ans = caesarCipher.decypher();
+        System.out.println(caesarCipher.checkIfSolved(ans));
     }
 }

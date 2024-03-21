@@ -15,39 +15,35 @@ public abstract class Task {
 
     public Task(int taskNumber) {
         this.taskNumber = taskNumber;
-
-        switch (taskNumber) {
-            case 1:
-                this.textType = TextType.TESS26;
-                break;
-            default:
-                break;
-        }
+        this.textType = TextType.TESS26;
     }
 
     public abstract String decypher();
 
     /**
      * Get the input file content
+     * 
      * @return the input file content
      */
     public String getInput() {
         String fileName = String.format("cexercise%d.txt", this.taskNumber);
-        Path path = FileUtils.getPath("res", "inputfiles", "personal_input", fileName);
+        Path path = FileUtils.getPath("comp5580", "res", "inputfiles", "personal_input", fileName);
         return readFile(path);
     }
 
     /**
      * Get the sample file content
+     * 
      * @return the sample file content
      */
     public String getSampleFile() {
-        Path path = FileUtils.getPath("res", "inputfiles", this.textType.getFileName());
+        Path path = FileUtils.getPath("comp5580", "res", "inputfiles", this.textType.getFileName());
         return readFile(path);
     }
 
     /**
      * Read the file given the path
+     * 
      * @param path the path of the file
      * @return the file content
      */
@@ -63,10 +59,23 @@ public abstract class Task {
 
     /**
      * Check if the current string is the solved string
+     * 
      * @param current the current string
      * @return true if the current string is the solved string, false otherwise
      */
     public boolean checkIfSolved(String current) {
         return this.getSampleFile().contains(current);
+    }
+
+    /**
+     * Shift the character by the given shift
+     * 
+     * @param c     the character to shift
+     * @param shift the shift value
+     * @return the shifted character
+     */
+    protected char shiftCharacter(char c, int shift) {
+        char base = Character.isLowerCase(c) ? 'a' : 'A';
+        return (char) ((c - base + shift) % 26 + base);
     }
 }
