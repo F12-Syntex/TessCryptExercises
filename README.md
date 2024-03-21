@@ -1,5 +1,3 @@
-Here's a potential README for the Cryptography Assignment on your GitHub:
-
 # Cryptography Assignment: Tess of the d'Urbervilles
 
 This repository contains my solutions for the Cryptography Assignment from the COMP5580 course at the University of Kent. The assignment involves decrypting extracts from the novel "Tess of the d'Urbervilles" by Thomas Hardy, which are encoded using various cryptographic techniques.
