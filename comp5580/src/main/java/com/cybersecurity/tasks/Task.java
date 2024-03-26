@@ -32,11 +32,11 @@ public abstract class Task {
     }
 
     /**
-     * Get the sample file content
+     * get the content of the input file which contains the decyphered text
      * 
      * @return the sample file content
      */
-    public String getSampleFile() {
+    public String getDecypheredTextSampleInput() {
         Path path = FileUtils.getPath("comp5580", "res", "inputfiles", this.textType.getFileName());
         return readFile(path);
     }
@@ -64,7 +64,7 @@ public abstract class Task {
      * @return true if the current string is the solved string, false otherwise
      */
     public boolean checkIfSolved(String current) {
-        return this.getSampleFile().contains(current);
+        return this.getDecypheredTextSampleInput().contains(current);
     }
 
     /**
