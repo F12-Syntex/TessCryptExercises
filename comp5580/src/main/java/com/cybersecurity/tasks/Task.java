@@ -36,8 +36,8 @@ public abstract class Task {
      * 
      * @return the sample file content
      */
-    public String getDecypheredTextSampleInput() {
-        Path path = FileUtils.getPath("comp5580", "res", "inputfiles", this.textType.getFileName());
+    public String getTess26() {
+        Path path = FileUtils.getPath("comp5580", "res", "inputfiles", TextType.TESS26.getFileName());
         return readFile(path);
     }
 
@@ -64,7 +64,7 @@ public abstract class Task {
      * @return true if the current string is the solved string, false otherwise
      */
     public boolean checkIfSolved(String current) {
-        return this.getDecypheredTextSampleInput().contains(current);
+        return this.getTess26().contains(current);
     }
 
     /**
