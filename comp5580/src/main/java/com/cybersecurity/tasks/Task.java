@@ -16,6 +16,10 @@ public abstract class Task {
     public Task(int taskNumber) {
         this.taskNumber = taskNumber;
         this.textType = TextType.TESS26;
+
+        if (this.taskNumber == 7) {
+            this.textType = TextType.TESS27;
+        }
     }
 
     public abstract String decypher();
@@ -34,10 +38,20 @@ public abstract class Task {
     /**
      * get the content of the input file which contains the decyphered text
      * 
-     * @return the sample file content
+     * @return the content of the tess 26 file
      */
     public String getTess26() {
         Path path = FileUtils.getPath("comp5580", "res", "inputfiles", TextType.TESS26.getFileName());
+        return readFile(path);
+    }
+
+    /**
+     * Get the content of the input file which contains the decyphered text
+     * 
+     * @return the content of the tess 27 file
+     */
+    public String getTess27() {
+        Path path = FileUtils.getPath("comp5580", "res", "inputfiles", TextType.TESS27.getFileName());
         return readFile(path);
     }
 
@@ -64,6 +78,10 @@ public abstract class Task {
      * @return true if the current string is the solved string, false otherwise
      */
     public boolean checkIfSolved(String current) {
+        // System.out.println("Task(" + this.taskNumber + "): " + current);
+        if (this.taskNumber == 7) {
+            return this.getTess27().contains(current);
+        }
         return this.getTess26().contains(current);
     }
 

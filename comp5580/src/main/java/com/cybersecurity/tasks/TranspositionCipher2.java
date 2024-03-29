@@ -106,7 +106,7 @@ public class TranspositionCipher2 extends Task {
     }
 
     public static void main(String[] args) {
-        TranspositionCipher transpositionCipher = new TranspositionCipher();
+        TranspositionCipher2 transpositionCipher = new TranspositionCipher2();
         transpositionCipher.decypher();
     }
 }
