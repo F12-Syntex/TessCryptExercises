@@ -1,0 +1,3 @@
+EDHISPRACTICEANDRECOGNIZEDTHEH
+
+For the transposition cipher decryption with a known column count of 6, I implemented an approach that generates all possible permutations of the column order and tries to decrypt the ciphertext using each permutation. The program fills a 2D grid with the ciphertext, then reads the grid row-wise based on different column orders, checking if the resulting text matches the expected plaintext. The nextPermutation method is used to generate the permutations of the column order. If a permutation produces the correct plaintext, it returns the decrypted text. Otherwise, it returns the last attempted decrypted text.

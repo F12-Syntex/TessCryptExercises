@@ -1,5 +1,6 @@
 package com.cybersecurity.tasks;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,6 +21,8 @@ public abstract class Task {
         if (this.taskNumber == 7) {
             this.textType = TextType.TESS27;
         }
+
+        this.writeToFile();
     }
 
     public abstract String decypher();
@@ -78,7 +81,7 @@ public abstract class Task {
      * @return true if the current string is the solved string, false otherwise
      */
     public boolean checkIfSolved(String current) {
-        // System.out.println("Task(" + this.taskNumber + "): " + current);
+        System.out.println("Task(" + this.taskNumber + "): " + current);
         if (this.taskNumber == 7) {
             return this.getTess27().contains(current);
         }
@@ -90,10 +93,42 @@ public abstract class Task {
      * 
      * @param c     the character to shift
      * @param shift the shift value
-     * @return the shifted character
-     */
+    * @return the shifted character
+    */
     protected char shiftCharacter(char c, int shift) {
         char base = Character.isLowerCase(c) ? 'a' : 'A';
         return (char) ((c - base + shift) % 26 + base);
+    }
+
+    /**
+     * Get the task number
+     * 
+     * @return
+     */
+    public int getTaskNumber() {
+        return this.taskNumber;
+    }
+
+    public void writeToFile() {
+        String output = this.decypher().substring(0, 30);
+
+        // write the output to the file
+        File file = new File(
+                "C:\\Users\\synte\\OneDrive - University of Kent\\Desktop\\programming\\University\\CyberSecurity\\comp5580\\res\\inputfiles\\output\\exercise"
+                        + this.getTaskNumber() + ".txt");
+
+        // create the file if it does not exist
+        try {
+            file.createNewFile();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // write to file
+        try {
+            Files.write(file.toPath(), output.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

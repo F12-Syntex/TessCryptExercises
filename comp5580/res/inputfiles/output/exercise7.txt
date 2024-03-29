@@ -1,0 +1,3 @@
+TESS|OF|THE|DURBERVILLES|A|PUR
+
+The general substitution cipher decryption approach creates a substitution map by comparing the ciphertext with the plaintext from tess27.txt. It iterates over both texts, mapping each unique ciphertext character to its corresponding plaintext character in the map. The decrypted text is then constructed by replacing ciphertext characters with their mapped plaintext counterparts using the substitution map. Non-substituted characters are preserved.

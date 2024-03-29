@@ -1,0 +1,15 @@
+TESENSATIONSWHATEVERTESSSREASO
+
+For the transposition cipher decryption, I implemented an approach that tries different column lengths (from 4 to 6) to fill a grid with the ciphertext characters. The program works as follows:
+
+It iterates over column lengths from 4 to 6.
+For each column length, it calls the decryptTransposition method to decrypt the ciphertext using that column length.
+The decryptTransposition method first calculates the number of rows needed to fill the grid based on the ciphertext length and the number of columns.
+It then fills the grid column by column with the ciphertext characters, paddin
+g any remaining cells with spaces.
+After filling the grid, it reads the grid row by row to construct the decrypted text.
+If the decrypted text matches the expected plaintext (checked by calling the checkIfSolved method), it breaks out of the loop and returns the decrypted text.
+If none of the column lengths produce the correct plaintext, it returns an empty string.
+The transposition cipher decryption relies on trying different column lengths until the correctly decrypted plaintext is found. By filling the grid column by column and reading it row by row, the program effectively reverses the transposition encryption process.
+
+The range of column lengths to try (4 to 6 in this case) is specific to the given task and may need to be adjusted for other transposition ciphers with different key spaces or parameters.

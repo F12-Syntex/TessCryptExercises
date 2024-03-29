@@ -1,0 +1,10 @@
+NTREPULSEYOUILIKEYOUTOTELLMEYO
+
+For the Vigenère Cipher decryption without a known key length, I implemented a frequency analysis approach that tries different key lengths within a specified range (in this case, 4 to 5). The program works as follows:
+
+It iterates over the possible key lengths from 4 to 6.
+For each key length, it calls the findKey method to determine the key characters using frequency analysis.
+It then uses the decryptVigenere method to decrypt the ciphertext with the found key.
+If the decrypted text matches the expected plaintext (checked by calling the checkIfSolved method), it prints the key and the decrypted text, and returns the decrypted text.
+If none of the key lengths within the specified range produce the correct plaintext, it throws a RuntimeException.
+The findKey method works similarly to the previous task, grouping the characters in the ciphertext by their position within the key, calculating the frequency of each character within each group, and finding the shift value that minimizes the difference between the group frequencies and the expected English letter frequencies.

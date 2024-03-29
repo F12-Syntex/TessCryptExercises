@@ -1,0 +1,12 @@
+IDTHEGENTLEMANRINGHISBELLMRSBR
+
+For the Vigenère Cipher decryption without a known key, I implemented a frequency analysis approach to find the key length and the key itself. The program first calls the findKey method to determine the key length and the key characters. It then uses the decryptVigenere method to decrypt the ciphertext with the found key.
+
+The findKey method works as follows:
+
+It iterates over potential key lengths from 1 to a specified maximum length (6 in this case).
+For each potential key length, it groups the characters in the ciphertext by their position within the key.
+It calculates the frequency of each character within each group and compares it with the expected English letter frequencies using the findBestShift method.
+The findBestShift method finds the shift value that minimizes the difference between the group frequencies and the expected English frequencies.
+The character corresponding to the best shift value is added to the key.
+After finding the key, the decryptVigenere method decrypts the ciphertext character by character using the key characters and the appropriate shift values.
